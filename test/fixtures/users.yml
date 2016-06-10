@@ -3,11 +3,12 @@ testuser:
   name: Testing Example
   email: testing@example.com
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 archer:
-  name: Sterling archer
+  name: Sterling Archer
   email: duchess@example.gov
-  password_digest: <% User.digest('password') %>
+  password_digest: <%= User.digest('password') %>
 
 lana:
   name: Lana Kane
