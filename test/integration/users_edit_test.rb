@@ -23,6 +23,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 		patch user_path(@user), user: { name: name, email: email, password: "", password_confirmation: "" }
 		assert_not flash.empty?
 		assert_redirected_to @user
+		assert session[:forwardin_url].nil?
 		@user.reload
 		assert_equal name, @user.name
 		assert_equal email, @user.email
